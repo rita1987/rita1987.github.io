@@ -1,0 +1,304 @@
+---
+layout: post
+title: "前端杂项（一）"
+date: 2017-03-26
+categories: hello
+---
+
+1.focus、focusin、focusout、blur的区别
+
+https://segmentfault.com/a/1190000003942014
+
+2.hint.css如何实现内容换行
+
+http://muki.tw/tech/pure-css-tooltip-data-tag/
+
+3.通过JS给表单赋值，如何触发onchange事件？
+
+这里区分下onchange、onpropertychange和oninput事件的区别:
+onchange：获得焦点，表单域的值改变，失去焦点，对比前后值，若发生改变则触发；
+onpropertychange：任意属性值改变均触发，包括js赋值，但这是IE专有；
+oninput：当value值改变时触发，且js赋值无效。
+
+4.css3网址参考
+
+http://www.runoob.com/w3cnote/47-css3-useful-tutorials-and-techniques.html
+
+5.css动画交互
+
+(1)css3+jquery鼠标左右滑入滑出效果
+
+http://tympanus.net/codrops/2012/04/09/direction-aware-hover-effect-with-css3-and-jquery/
+
+(2)http://www.shejidaren.com/
+
+(3)http://www.codefans.net/jscss/code/4052.shtml
+
+6.专为HTML5和CSS3的功能检测类库--Modernizr
+
+http://www.osmn00.com/translation/221.html
+
+7.react学习
+
+http://www.vccoo.com/v/c8077f
+
+8.免费建站工具(react开发)
+
+https://www.strikingly.com/s/discover
+
+9.文本打字机效果js实现
+
+https://github.com/mattboldt/typed.js/
+
+10.react的动画实现方式
+
+http://www.zhihu.com/question/40746239
+
+11.轮播无缝循环思路
+
+http://w3ctrain.com/2016/04/25/infinite-carousel/
+
+12.margin:0 auto失效时，在父元素加上text-align:center
+
+13.css3打钩动画
+
+http://www.softwhy.com/mytest/code/1653/
+
+14.GOOD WEBSITE REFER:http://www.520ued.com/
+
+15.切屏动画
+
+http://www.htmleaf.com/Demo/201504151685.html
+
+16.position层叠上下文
+
+17.酷炫动画http://yusi123.com/2408.html
+
+18.需要注意的坑
+
+刚碰到一个问题，项目中引入了一个字体文件 格式为 .ttf 的文件 但是被springMvc拦截了,大家知道springmvc都是当着请求拦截的，但是查看spring-servlet 已经配置了
+
+<mvc:resources location="/default/" mapping="/default/**" cache-period="86400"/>
+资源不拦截，所以很奇怪，断点DispatcherServlet发现没有配置的情况下取的是容器的minitype配置，我们本地也就是 jetty mime.properties 下的配置是没有字体mime配置的，所以对应的以后碰到这样的情况，查找如上，解决方案 直接在web.xml中配置 ，以下是字体对应的mime：
+
+<mime-mapping>
+        <extension>woff</extension>
+        <mime-type>application/x-font-woff</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+        <extension>ttf</extension>
+        <mime-type>application/octet-stream</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+        <extension>otf</extension>
+    <mime-type>application/octet-stream</mime-type>
+</mime-mapping>
+19.表单元素的name属性有何作用？
+
+20.React中保存DOM至变量中，存储为什么类型？
+
+21.react-color使用
+
+http://casesandberg.github.io/react-color/#api
+
+22.for each循环中return作用
+
+23.react轮播组件
+
+http://www.jianshu.com/p/a7c363913f1c swiper轮播： http://www.swiper.com.cn/demo/21-autoplay.html
+
+24.H5场景编辑文本编辑
+
+http://eng.liveapp.cn/case/index?id=1144136
+
+25.jquery.ui.resizable的问题参考(按比例伸缩)
+
+http://www.cnblogs.com/walls/p/4256736.html
+
+resizable文档API参考 ： http://www.css88.com/jquery-ui-api/resizable/#option-aspectRatio
+
+http://www.runoob.com/jqueryui/api-resizable.html#option-aspectRatio
+
+26.css效果案例参考网址
+
+http://www.shejidaren.com/examples/imagehover-css/index.html
+https://daneden.github.io/animate.css/
+
+27.web前端技术博客
+
+http://www.xuanfengge.com/ content==>
+1>前端技术特效：http://www.xuanfengge.com/funny/
+2>前端资源集合：http://www.xuanfengge.com/nav/
+
+28.css3point-events
+
+http://www.zhangxinxu.com/wordpress/2011/12/css3-pointer-events-none-javascript/
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/pointer-events
+
+29.sass中的一些用法
+
+@mixin animation-box($bgImg) {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #e8e8e8;
+    background-image: url($bgImg);
+    background-size: cover;
+}
+@for $i from 1 through 24 {
+    .animation-in-#{$i} {
+        @include animation-box("../img/animation/animation_in_#{$i}.png");
+    }
+}
+30.css中的命名参考
+
+常用CSS命名词汇
+
+头：header
+内容：content/container
+尾：footer
+导航：nav
+侧栏：sidebar
+栏目：column
+页面外围控制整体布局宽度：wrapper
+左右中：left right center
+登录条：loginbar
+标志：logo
+广告：banner
+页面主体：main
+热点：hot
+新闻：news
+下载：download
+子导航：subnav
+菜单：menu
+子菜单：submenu
+搜索：search
+友情链接：friendlink
+页脚：footer
+版权：copyright
+滚动：scroll
+内容：content
+标签页：tab
+文章列表：list
+提示信息：msg
+小技巧：tips
+栏目标题：title
+加入：joinus
+指南：guild
+服务：service
+注册：regsiter
+状态态：status
+投票：vote
+合作伙伴：partner
+页面结构
+
+容器: container
+
+页头：header
+
+内容：content/container
+
+页面主体：main
+
+页尾：footer
+
+导航：nav
+
+侧栏：sidebar
+
+栏目：column
+
+页面外围控制整体布局宽度：wrapper
+
+左右中：left right center
+
+导航
+
+导航：nav
+
+主导航：mainbav
+
+子导航：subnav
+
+顶导航：topnav
+
+边导航：sidebar
+
+左导航：leftsidebar
+
+右导航：rightsidebar
+
+菜单：menu
+
+子菜单：submenu
+
+标题: title
+
+摘要: summary
+
+功能
+
+标志：logo
+
+广告：banner
+
+登陆：login
+
+登录条：loginbar
+
+注册：regsiter
+
+搜索：search
+
+功能区：shop
+
+标题：title
+
+加入：joinus
+
+状态：status
+
+按钮：btn
+
+滚动：scroll
+
+标签页：tab
+
+文章列表：list
+
+提示信息：msg
+
+当前的: current
+
+小技巧：tips
+
+图标: icon
+
+注释：note
+
+指南：guild
+
+服务：service
+
+热点：hot
+
+新闻：news
+
+下载：download
+
+投票：vote
+
+合作伙伴：partner
+
+友情链接：link
+
+版权：copyright
+
+31.animation rotate要实现多次匀速转动，注意该属性：
+
+animation-timing-function: linear;
+32.后台过滤器与资源访问？
+
+33.css3效果：http://cloud.21tb.com/webos/demo/index.html
